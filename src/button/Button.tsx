@@ -1,14 +1,13 @@
 import { defineComponent, PropType } from "vue";
-import 'uno.css'
 export type IColor = 'black' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'pink'
 export const props = {
     color: {
         type: String as PropType<IColor>,
-        default: 'yellow'
+        default: 'gray'
     },
     icon:{
         type:String,
-        default:'search'
+        default:''
     }
 }
 export default defineComponent({
@@ -29,10 +28,11 @@ export default defineComponent({
                 hover:bg-${ props.color }-700 
                 border-none 
                 cursor-pointer 
+                mx-1
                 `
             }>
                 { props.icon !== "" ? <i class={`i-ic-baseline-${props.icon} p-3`}></i> : ""}
-                { slots.default ? slots.default() : '普通按钮' }
+                { slots.default ? slots.default() : '' }
             </button>
         )
     }

@@ -13,7 +13,11 @@ const rollupOptions = {
     },
 };
 export default defineConfig({
-
+    resolve:{
+        alias:{
+            vue:'vue/dist/vue.esm-bundler.js'
+        }
+    },
     plugins: [
         vue(),
         // 添加JSX插件
@@ -21,7 +25,8 @@ export default defineConfig({
             // options are passed on to @vue/babel-plugin-jsx
         }),
         // 添加UnoCSS插件
-        Unocss()
+        Unocss(),
+        
     ],
     build: {
         rollupOptions,
@@ -34,5 +39,8 @@ export default defineConfig({
             //@ts-ignore
             formats: ["esm", "umd", "iife"],
         },
+        cssCodeSplit:true,
+        
     },
+    
 });

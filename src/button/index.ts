@@ -1,9 +1,12 @@
-import { defineComponent, h } from "vue";
+import Button from "./Button";
+import { App } from 'vue'
 
-export default defineComponent({
-    name:"SButton",
+// 导出Button组件
+export { Button }
 
-    render(){
-        return h("button",null,'MyButton')
+// 导出Vue插件
+export default {
+    install(app: App) {
+        app.component(Button.name, Button)
     }
-})
+}
