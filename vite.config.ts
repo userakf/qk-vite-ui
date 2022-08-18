@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -13,11 +14,7 @@ const rollupOptions = {
     },
 };
 export default defineConfig({
-    resolve:{
-        alias:{
-            vue:'vue/dist/vue.esm-bundler.js'
-        }
-    },
+    
     plugins: [
         vue(),
         // 添加JSX插件
@@ -42,5 +39,19 @@ export default defineConfig({
         cssCodeSplit:true,
         
     },
-    
+    resolve:{
+        alias:{
+            vue:'vue/dist/vue.esm-bundler.js'
+        }
+    },
+    test:{
+        globals:true,
+
+        environment:'happy-dom',
+        // 支持tsx组件，很关键
+        transformMode: {
+            web: [/.[tj]sx$/]
+        }
+    }
+
 });
