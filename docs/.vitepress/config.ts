@@ -1,11 +1,11 @@
 import { version } from '../../package.json'
-
-const config = {
+import { UserConfig, DefaultTheme } from 'vitepress'
+const config: UserConfig<DefaultTheme.Config> = {
     lang: 'en-US',
     title: 'VitePress',
     description: 'Vite & Vue powered static site generator.',
     themeConfig: {
-        nav:nav(),
+        nav: nav(),
 
         sidebar: {
             '/': sidebarGuide(),
@@ -21,7 +21,7 @@ const config = {
 
 export default config
 
-function nav() {
+function nav(): DefaultTheme.NavItem[] {
     return [
         { text: 'Guide', link: '/guide/what-is-vitepress', activeMatch: '/guide/' },
         { text: 'Configs', link: '/config/introduction', activeMatch: '/config/' },
@@ -41,7 +41,7 @@ function nav() {
     ]
 }
 
-function sidebarGuide() {
+function sidebarGuide(): DefaultTheme.SidebarGroup[] {
     return [
         {
             text: '目录',
@@ -53,18 +53,13 @@ function sidebarGuide() {
                         { text: 'Button 按钮', link: '/components/button/' },
                     ]
                 },
-                { text: '导航' },
-                { text: '反馈' },
-                { text: '数据录入' },
-                { text: '数据展示' },
-                { text: '布局' },
             ]
         }
 
     ]
 }
 
-function sidebarConfig() {
+function sidebarConfig(): DefaultTheme.SidebarGroup[] {
     return [
         {
             text: 'Config',
