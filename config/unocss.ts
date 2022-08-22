@@ -1,7 +1,7 @@
 import { presetUno, presetAttributify, presetIcons } from "unocss";
 import Unocss from "unocss/vite";
 
-const colors = [
+export const colors = [
     "white",
     "black",
     "gray",
@@ -12,7 +12,7 @@ const colors = [
     "indigo",
     "purple",
     "pink",
-];
+] as const;
 
 const safelist = [
     ...colors.map((v) => `bg-${v}-500`),

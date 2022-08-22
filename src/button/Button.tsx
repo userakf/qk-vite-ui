@@ -1,5 +1,7 @@
 import { defineComponent, PropType } from "vue";
-export type IColor = 'black' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'pink'
+import { colors } from '../../config/unocss'
+type Translate<T extends readonly string[]> = T[number]
+export type IColor = Translate<typeof colors>
 export const props = {
     color: {
         type: String as PropType<IColor>,
