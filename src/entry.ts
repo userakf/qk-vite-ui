@@ -9,6 +9,6 @@ export { Button };
 
 export default {
   install(app: App): void {
-    app.component(Button.name, Button);
+    [Button].forEach((c) => app.component(c.name,c))
   },
 };
