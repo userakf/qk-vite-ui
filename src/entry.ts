@@ -6,7 +6,6 @@ import 'uno.css'
 export { Button };
 
 // 编写一个插件，实现一个install方法
-
 export default {
   install(app: App): void {
     [Button].forEach((c) => app.component(c.name,c))
