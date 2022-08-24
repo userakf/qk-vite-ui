@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import SmartyUI from './entry'
+import QkUi from './entry'
 
 function bootstrap() {
     const app = createApp({
@@ -7,7 +7,7 @@ function bootstrap() {
         <JSXButton />
         `
     })
-    app.use(SmartyUI)
+    app.use(QkUi)
     app.mount('#app')
 }
 

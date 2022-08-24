@@ -27,11 +27,13 @@ export default defineConfig({
     ],
     build: {
         rollupOptions,
-        minify: false,
+        minify: 'terser',
+        sourcemap:true, // 输出单独 source 文件
+        brotliSize:true, // 生成压缩大小报告
         lib: {
             entry: "./src/entry.ts",
-            name: "SmartyUI",
-            fileName: "smarty-ui",
+            name: "QkUi",
+            fileName: "qk-ui",
             // 导出模块格式
             //@ts-ignore
             formats: ["esm", "umd", "iife"],
