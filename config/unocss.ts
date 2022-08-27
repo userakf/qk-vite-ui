@@ -14,19 +14,20 @@ export const colors = [
     "pink",
 ] as const;
 
+export const icons = [
+    "search",
+    "edit",
+    "check",
+    "message",
+    "star-off",
+    "delete",
+    "add",
+    "share",
+] as const
 const safelist = [
     ...colors.map((v) => `bg-${v}-500`),
     ...colors.map((v) => `hover:bg-${v}-700`),
-    ...[
-        "search",
-        "edit",
-        "check",
-        "message",
-        "star-off",
-        "delete",
-        "add",
-        "share",
-    ].map((v) => `i-ic-baseline-${v}`)
+    ...icons.map((v) => `i-ic-baseline-${v}`)
 ]
 
 export default () =>

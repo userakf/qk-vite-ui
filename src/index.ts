@@ -4,7 +4,7 @@ import QkUi from './entry'
 function bootstrap() {
     const app = createApp({
         template:`
-        <JSXButton />
+        <SButton />
         `
     })
     app.use(QkUi)

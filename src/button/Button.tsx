@@ -1,14 +1,15 @@
 import { defineComponent, PropType } from "vue";
-import { colors } from '../../config/unocss'
-type Translate<T extends readonly string[]> = T[number]
-export type IColor = Translate<typeof colors>
+import { colors,icons } from '../../config/unocss'
+type TupleToUnion<T extends readonly string[]> = T[number]
+export type IColor = TupleToUnion<typeof colors>
+export type IIcon = TupleToUnion<typeof icons>
 export const props = {
     color: {
         type: String as PropType<IColor>,
         default: 'gray'
     },
     icon:{
-        type:String,
+        type:String as PropType<IIcon>,
         default:''
     }
 }
@@ -33,8 +34,8 @@ export default defineComponent({
                 mx-1
                 `
             }>
-                { props.icon !== "" ? <i class={`i-ic-baseline-${props.icon} p-3`}></i> : ""}
-                { slots.default ? slots.default() : '' }
+                { props.icon ? <i class={`i-ic-baseline-${props.icon} p-3`}></i> : ""}
+                { slots.default ? slots.default() : '普通按钮' }
             </button>
         )
     }
