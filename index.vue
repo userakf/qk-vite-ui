@@ -5,10 +5,10 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
-const resList = reactive([])
+import { reactive,VNodeRef } from 'vue'
+const resList = reactive<Element[]>([])
 const arr = reactive([])
-const colRefs = (ref: Element, refs: Record<string, any> = {}) => {
+const colRefs = (ref, refs: Record<string, any> = {}) => {
     resList.push(ref)
 }
 </script>
